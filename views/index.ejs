@@ -1,0 +1,20 @@
+<h1>Gifr.io</h1>
+<div class="how-it-works">
+	<h2>Get random images at any size:</h2>
+	<p>&lt;img src=&quot;http://gifr.io/width/height&quot;/&gt;</p>
+	<h2>Get a certain type (eg. kittens, unicorns, etc) of image at any size:</h2>
+	<p>&lt;img src=&quot;http://gifr.io/width/height/type&quot;/&gt;</p>
+	&nbsp;
+	<h2>Or! Upload a image below:</h2>
+
+</div>
+
+<div class="upload-image">
+	<form method="post" action="<%= appUrl %>/upload" enctype="multipart/form-data">
+		<p>Image</p>
+		<input multiple="multiple" type="file" name="upload"/><br/>
+		<p>Tags about the image: </p>
+		<input type="text" name="tags" value=""/>
+		<input type="submit" name="btn-submit" value="Upload"/>
+	</form>
+</div>
