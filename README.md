@@ -1,4 +1,4 @@
 gifr
 ====
 
-http://gir.io/
+gifr.io
