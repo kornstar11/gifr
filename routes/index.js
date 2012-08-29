@@ -31,25 +31,20 @@ var getFileSize		= function(src) {
 	var stat	=fs.statSync(src);
 	return stat.size;
 };
-exports.index = function(req, res){
-  res.render('index', { content: 'test' });
-};
-exports.getRandomImage = function(req, res){
-  console.log('randome');
-  var width	= req.params[0];
-  var height	= req.params[1];
-  console.log(width+'x'+height);
- 	db.images.count(function(err,count){
-	  var randomNum	= getRandomNumber(count);
-	  console.log(randomNum);
-	  db.images.find().limit(-1).skip(randomNum).next(function(err,imageDb) {
-		  console.log(imageDb);
+var fetchImage		= function(imageDb,res,req) {
+
+		  var width	= req.params[0];
+		  var height	= req.params[1];
 		  var resize	= true;
 		  var sizes	= imageDb.sizes;
 		  var connect	= require('connect');
+		console.log('B4 sizes');
+		console.log(imageDb);
 		  if(typeof sizes !== 'undefined') {
+			console.log('SIZES');
 		  	for(idx in sizes) {
 				var size	= sizes[idx];
+				console.log(size);
 				if(size.width == width && size.height == height) {
 					resize	= false;
 				}
@@ -95,9 +90,39 @@ exports.getRandomImage = function(req, res){
 						'Content-Length': size});
 			    pumpFileStream(dst,res);
 		}
-		 
+};
+exports.index 		= function(req, res){
+  res.render('index', { content: 'test' });
+};
+exports.getRandomImage 	= function(req, res){
+  console.log('random image lookup...');
+  var width	= req.params[0];
+  var height	= req.params[1];
+  console.log(width+'x'+height);
+ 	db.images.count(function(err,count){
+	  var randomNum	= getRandomNumber(count);
+	  console.log(randomNum);
+	  db.images.find().limit(-1).skip(randomNum).next(function(err,imageDb) {
+		 fetchImage(imageDb,res,req);
 	});
       });
+};
+exports.getTagImage	= function(req,res) {
+  console.log('tag image lookup...');
+  var width	= req.params[0];
+  var height	= req.params[1];
+  var tag	= req.params[2];
+  db.images.find({tags: tag}).limit(1,function(err,imageDb) {
+	if(imageDb != null && imageDb.length > 0){
+		console.log('HIT');
+		fetchImage(imageDb[0],res,req);
+	}
+	else {
+	  res.end('The tag: '+tag+' was not found... Why dont you find a image that should be taged that way and upload it!');
+	
+	}
+  });
+	
 };
 exports.upload			= function(req,res) {
 	var fs 			= require('fs');

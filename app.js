@@ -46,6 +46,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 ///^\/commits\/(\d+)(?:\.\.(\d+))?$/
+app.get(/^\/(\d+)\/(\d+)\/(\w+)?$/, routes.getTagImage);
 app.get(/^\/(\d+)\/(\d+)?$/, routes.getRandomImage);
 app.post('/upload', routes.upload);
 
