@@ -71,7 +71,7 @@ exports.getRandomImage = function(req, res){
 			    height:	height
 		
 			  }, function(err,stout,stin) {
-			    if(err) throw err;
+			    if(err) console.log(err);
 			    console.log('Resized Image');
 			    //Make this a function
 			    var type	= connect.mime.lookup(dst);
