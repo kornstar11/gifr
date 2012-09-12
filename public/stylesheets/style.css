@@ -1,7 +1,187 @@
+html {
+	background: url(../images/assets/grey.png) repeat;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: 'Courier New', Courier, monospace;
+	color: #444444;
 }
 a {
   color: #00b7ff;
+}
+pre {
+	padding: 10px;
+	border: 1px solid #cccccc;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+pre:hover {
+	border: 1px solid #00b7ff;
+	background: #ffffff;
+}
+input.button,
+button {
+	background: #E52738; 
+    border: 1px solid #f1f1f1;
+    color: #ffffff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+input.button:hover,
+button:hover {
+	background: #d92534; 
+}
+input.text {
+	padding: 3px;
+	width: 260px;
+}
+input.button.upload {
+	width: 327px;
+}
+
+/* Moar */
+
+.moar {
+	background: #FFE87A;
+	border: 1px solid #e5d26e;
+	color: #bfaf5c;
+	position: fixed;
+	left: -195px;
+	top: 15px;
+	padding: 10px 20px;
+	border-radius: 0 7px 7px 0;
+	-moz-border-radius: 0 7px 7px 0;
+	-webkit-border-radius: 0 7px 7px 0;
+}
+i.icon-github,
+i.icon-caret-right {
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px 0 0 15px;
+}
+.moar a {
+	color: #bfaf5c;
+	text-decoration: none;
+}
+.moar a:hover {
+	text-decoration: underline;
+}
+
+/* Layout */
+
+.wrap {
+	width: 960px;
+	margin: 0 auto;
+}
+.masthead {
+	height: 50px;
+	color: #ffffff;
+	padding: 20px;
+	border-bottom: 2px solid #cc2331;
+	background-color: #E52738; 
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E52738), to(#d92534));
+    background-image: -webkit-linear-gradient(top, #E52738, #d92534); 
+    background-image:    -moz-linear-gradient(top, #E52738, #d92534);
+    background-image:     -ms-linear-gradient(top, #E52738, #d92534);
+    background-image:      -o-linear-gradient(top, #E52738, #d92534);
+}
+.masthead h1 {
+	font-size: 45px;
+	margin: 0;
+	float: left;
+}
+.masthead span {
+	font-size: 15px;
+	color: #b31e2b;
+}
+.masthead p {
+	float: right;
+}
+.credits {
+	height: 20px;
+	width: 20px;
+	background: #a61c28;
+	color: #f1f1f1;
+	border: 1px solid #8c1822;
+	border-top: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/* Contents */
+
+.content {
+	width: 958px;
+	float: left;
+	background: #ffffff;
+	font-family: sans-serif;
+	padding-bottom: 30px;
+	min-height: 600px;
+	border-left: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+}
+.example {
+	height: 170px;
+	display: none;
+	margin-bottom: 30px;
+}
+.example .gif {
+	background: url(http://www.gifr.io/320/320) repeat-x;
+	height: 180px;
+	width: 100%;
+	float: left;
+}
+.left {
+	float: left;
+	width: 500px;
+	padding: 0 20px 20px 20px;
+}
+.right {
+	float: right;
+	width: 375px;
+	padding: 0 20px 20px 20px;
+}
+.section-wrap {
+	height: 215px;
+	padding: 10px;
+	background: #fafafa;
+	border: 1px solid #f2f2f2;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #555555;
+}
+.left h2,
+.right h2 {
+	padding: 5px 0;
+	border-bottom: 1px solid #eeeeee;
+}
+
+/* Footer */
+
+footer {
+	float: left;
+	background: #FFE87A;
+	border-top: 2px solid #e5d26e;
+	clear: both;
+	width: 100%;
+	font-size: 11px;
+}
+footer .extra {
+	padding: 20px;
+	color: #bfaf5c;
+}
+footer .contributors {
+	float: right;
+	font-size: 10px;
+}
+footer .contributors a {
+	text-decoration: none;
+	color: #bfaf5c;
 }

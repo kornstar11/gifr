@@ -1,20 +1,41 @@
-<h1>Gifr.io</h1>
-<div class="how-it-works">
-	<h2>Get random images at any size:</h2>
-	<p>&lt;img src=&quot;http://gifr.io/width/height&quot;/&gt;</p>
-	<h2>Get a certain type (eg. kittens, unicorns, etc) of image at any size:</h2>
-	<p>&lt;img src=&quot;http://gifr.io/width/height/type&quot;/&gt;</p>
-	&nbsp;
-	<h2>Or! Upload a image below:</h2>
-
-</div>
-
-<div class="upload-image">
-	<form method="post" action="<%= appUrl %>/upload" enctype="multipart/form-data">
-		<p>Image</p>
-		<input multiple="multiple" type="file" name="upload"/><br/>
-		<p>Tags about the image: </p>
-		<input type="text" name="tags" value=""/>
-		<input type="submit" name="btn-submit" value="Upload"/>
-	</form>
+<div class="wrap">
+	<div class="masthead">
+		<h1>gifr.io<span> alpha</span></h1>
+		<p>[super-rad gif-placeholders]</p>
+	</div>
+	<div class="moar">
+		<span><a href="https://github.com/kornstar11/gifr">Fork this project</a> <i class="icon-caret-right"></i></span>
+	</div>
+	<div class="content">
+		<div class="example">
+			<div class="gif"></div>
+		</div>
+		<div class="left">
+			<h2>Get some .gifs</h2>
+			<div class="section-wrap">
+				<h4><i class="icon-random"></i> Get random images at any size:</h4>
+				<pre>&lt;img src=&quot;http://gifr.io/width/height&quot;/&gt;</pre>
+				<h4><i class="icon-tag"></i> Get a special tagged image (eg. kittens, unicorns, etc):</h4>
+				<pre>&lt;img src=&quot;http://gifr.io/width/height/type&quot;/&gt;</pre>
+			</div>
+		</div>
+		<div class="right">
+			<h2>Give some .gifs:</h2>
+			<div class="section-wrap">
+				<form method="post" action="<%= appUrl %>/upload" enctype="multipart/form-data">
+				    <h4><i class="icon-upload"></i> Upload your .gif</h4>
+				    <input multiple="multiple" type="file" name="upload" class="button upload" /><br/>
+				    <h4><i class="icon-tags"></i> How about adding some tags?</h4>
+				    <input type="text" name="tags" value="" class="text" />
+				    <button type="submit" name="btn-submit" value="Upload" class="button">Upload <i class="icon-upload-alt"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="extra">
+			<span class="copyright">&copy; 2012 - gifr (all .gifs property of their respective owners)</span>
+			<span class="contributors">Made with <i class="icon-heart"></i> by: <a href="#">Ben Kornmeier</a> + <a href="http://www.twitter.com/enso491">Mike Miller</a> + <a href="http://www.twitter.com/chase_beck">Chase Beck</a></span>
+		</div>
+	</footer>
 </div>

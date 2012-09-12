@@ -124,7 +124,7 @@ exports.getTagImage	= function(req,res) {
   });
 	
 };
-exports.upload			= function(req,res) {
+exports.upload		= function(req,res) {
 	var fs 			= require('fs');
 	var tags		= req.body.tags;
 	//var uploadLocation	= './public/uploads/'+req.files.upload.name;

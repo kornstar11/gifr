@@ -23,7 +23,7 @@ db	 = require('mongojs').connect(connectUrl, collections);
 app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 4000);
   app.set('views', __dirname + '/views');
   app.set('layout','layout');
   app.set('view engine', 'ejs');
